@@ -1,12 +1,12 @@
-# How to Setup OpenClaw on Virtual Private Server
 *Last updated: 2/1/2026*
+# How to Setup OpenClaw on Virtual Private Server
 
 - **What is OpenClaw?** A self-hosted personal AI agent that **acts** for you by being able to access a browser, files, calendar, email, and can communicate with you through a messaging app like WhatsApp, Telegram, Slack, Discord.
 - **Why hosted?** Runs 24/7, more secure than running on your laptop, no disconnect from WhatsApp/Telegram when your machine sleeps. For my setup, I also started with setting up fresh accounts for services to explore how it works while keeping it isolated from my personal data. 
 
 # Set up your server and log in
 
-[ ]  Sign in or sign up for a Digital Ocean account (https://cloud.digitalocean.com/registrations/new). For the recommended setup, it will cost you ~$24/mo FYI. To learn more about some of the benefits: https://marketplace.digitalocean.com/apps/openclaw. 
+- Sign in or sign up for a [Digital Ocean account](https://cloud.digitalocean.com/registrations/new). For the recommended setup, it will cost you ~$24/mo FYI. To learn more about some of the benefits: [OpenClaw on Digital Ocean Marketplace](https://marketplace.digitalocean.com/apps/openclaw). 
 - [ ] Create a Droplet, choose a Region close to you, select Marketplace, search for OpenClaw, choose Basic Shared CPU with at least 4GB RAM
 - [ ] For Authentication, select SSH. To set up an SSH key from your Mac terminal:
 ``bash ssh-keygen -t ed25519 -f ~/.ssh/id_digitalocean -C "digitalocean-key"```
@@ -27,7 +27,7 @@ You should now be set up with OpenClaw running on your server!
 - [ ] Create a new Google Account
 - [ ] Create a new Google Voice account
 - [ ] Create a new Anthropic Account with your new Google Account
-- [ ] Copy your Anthropic API Key (https://console.anthropic.com) and fund the account with some credit
+- [ ] Copy your Anthropic API Key from [Anthropic Console](https://console.anthropic.com) and fund the account with some credit
 
 # Getting Started with OpenClaw 
 
@@ -49,7 +49,7 @@ node /opt/clawdbot/dist/entry.js onboard
 - [ ] Open your bot in Telegram and see if it responds
 
 # Set up Web Browsing
-- [ ] Get a Brave API key (https://brave.com/search/api/)
+- [ ] Get a [Brave API key](https://brave.com/search/api/)
 - [ ] On your server console:
 node /opt/clawdbot/dist/entry.js configure --section web
 - [ ] Configure on local host, enable web browsing, paste in your key, yes to keyless web fetch
@@ -62,7 +62,7 @@ node /opt/clawdbot/dist/entry.js browser start
 - [ ] Test it in chat, it should work!
 
 # Set up Google Connection
-- [ ] Go to Google Console (https://console.cloud.google.com/welcome/new?pli=1)
+- [ ] Go to [Google Console](https://console.cloud.google.com/welcome/new?pli=1)
 - [ ] Create a new project                                                                                                  
 - [ ] Go to Enabled APIs & Services: Enable Gmail API, Calendar API, Drive, Contacts, Sheets, Docs, Places, etc.   
 - [ ] Go to Keys and Credentials set up OAuth Desktop app
@@ -101,7 +101,7 @@ gog auth tokens export vatch2025@gmail.com --out token.txt
 
 # Set up Moltbook (a social network for AI agents)
 - [ ] In chat tell your bot to join:
-Go to moltbook.com, read the skill/setup instructions, and register this agent on Moltbook.
+Go to [moltbook.com](https://moltbook.com), read the skill/setup instructions, and register this agent on Moltbook.
 - [ ] After the agent signs up, it should send you a claim link (a URL that lets you claim this agent as yours).
 - [ ] Set up a new X account
 - [ ] Follow the various steps to post the message on your X account and claim your bot
