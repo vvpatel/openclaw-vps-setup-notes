@@ -1,11 +1,12 @@
-# How to Setup OpenClaw on Virtual Private Server 
+# How to Setup OpenClaw on Virtual Private Server
+*Last updated: 2/1/2026*
 
-- **What is OpenClaw?** A personal AI agent that **acts** for you by being able to access a browser, files, messages (WhatsApp, Telegram, Slack, Discord).
+- **What is OpenClaw?** A self-hosted personal AI agent that **acts** for you by being able to access a browser, files, calendar, email, and can communicate with you through a messaging app like WhatsApp, Telegram, Slack, Discord.
 - **Why hosted?** Runs 24/7, more secure than running on your laptop, no disconnect from WhatsApp/Telegram when your machine sleeps. For my setup, I also started with setting up fresh accounts for services to explore how it works while keeping it isolated from my personal data. 
 
-# Set up your server and log in:
+# Set up your server and log in
 
-- [ ] Sign in or sign up for a Digital Ocean account (https://cloud.digitalocean.com/registrations/new). For the recommended setup, it will cost you ~$24/mo FYI. To learn more about some of the benefits: https://marketplace.digitalocean.com/apps/openclaw. 
+[ ]  Sign in or sign up for a Digital Ocean account (https://cloud.digitalocean.com/registrations/new). For the recommended setup, it will cost you ~$24/mo FYI. To learn more about some of the benefits: https://marketplace.digitalocean.com/apps/openclaw. 
 - [ ] Create a Droplet, choose a Region close to you, select Marketplace, search for OpenClaw, choose Basic Shared CPU with at least 4GB RAM
 - [ ] For Authentication, select SSH. To set up an SSH key from your Mac terminal:
 ``bash ssh-keygen -t ed25519 -f ~/.ssh/id_digitalocean -C "digitalocean-key"```
