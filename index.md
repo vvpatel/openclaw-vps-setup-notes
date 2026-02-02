@@ -57,6 +57,14 @@
 - On the web dashboard go to the Config > Web, switch it to on, click save, and it will restart the gateway. (I'm not sure why this wasn't set correctly from the earlier commands, but it did the trick)
 - Test it in chat by asking to use brave to browse the web to look up something, it should work!
 
+# Set up Moltbook (a social network for AI agents)
+- In chat tell your bot to join:
+``Go to [moltbook.com](https://moltbook.com), read the skill/setup instructions, and register this agent on Moltbook.``
+- After the agent signs up, it should send you a claim link (a URL that lets you claim this agent as yours).
+- Set up a new X account from your new Google Account
+- Follow the various steps to post the message on your X account and claim your bot
+- You can let your bot know once it's been set up
+
 # Set up Google Connections (I got oAuth with Google working a few times, but it seemed to die. Just the regular Google API key was fine)
 - Login with your new Google Account 
 - Go to [Google Console](https://console.cloud.google.com/welcome/new?pli=1)
@@ -66,7 +74,7 @@
 - Download the client_secret.json file
 - To copy it to the server from your Mac:
 ``scp -i ~/.ssh/id_digitalocean ~/Downloads/client_secret_*.json root@YOUR_SERVER_IP:~/``
-- [ ] From your server console, get the URL for gog (to connect to google services)
+- From your server terminal, get the URL for gog (to connect to google services)
 ``curl -s https://api.github.com/repos/steipete/gogcli/releases/latest | grep "browser_download_url"``
 - Download gog from github onto your server using the url you just found and install it
 ``cd /tmp``
@@ -81,13 +89,13 @@
 - From your server:
 ``gog auth add your@gmail.com``
 - If gog prints a URL like https://accounts.google.com/..., open that URL on your Mac in your browser, continue, give it permissions.
-- [ ] Now, note the port it fails when it says site can't be reached. So in this example it would be 35699 since I see http://127.0.0.1:35699/...
-- [ ] On your Mac terminal replace PORT with the port from the URL, e.g. 35699 instead of 8080, and YOUR_SERVER_IP with your server's IP:
+- Now, note the port it fails when it says site can't be reached. So in this example it would be 35699 since I see http://127.0.0.1:35699/...
+- On your Mac terminal replace PORT with the port from the URL, e.g. 35699 instead of 8080, and YOUR_SERVER_IP with your server's IP:
 ``ssh -i ~/.ssh/id_digitalocean -L 8080:localhost:8080 root@YOUR_SERVER_IP``
 (That tunnel sends "Mac's 127.0.0.1:8080" → "server's localhost:8080")
 - Refresh that error page in your browser at the end of the google auth flow and it should now work
 - In the server terminal you may have to enter a keyring passcode, don't create one
-- To verify it worked on the server console:
+- To verify it worked on the server:
 ``gog auth list``
 - Restart the daemon
 ``systemctl --user restart clawdbot-gateway``
@@ -95,14 +103,6 @@
 - Hook OpenClaw to gog. I was able to do this in the chat and passed it my token by exporting it on the command line and pasting it into chat
 ``gog auth tokens export vatch2025@gmail.com --out token.txt``
 - Test it out! From your Telegram, you can message your bot to create a doc and email it to someone, pretty cool!
-
-# Set up Moltbook (a social network for AI agents)
-- In chat tell your bot to join:
-``Go to [moltbook.com](https://moltbook.com), read the skill/setup instructions, and register this agent on Moltbook.``
-- After the agent signs up, it should send you a claim link (a URL that lets you claim this agent as yours).
-- Set up a new X account from your new Google Account
-- Follow the various steps to post the message on your X account and claim your bot
-- You can let your bot know once it's been set up
 
 # General debugging
 - If you're like me, and don't spend your days on a server command line, you can make progress by opening the log file, dopping it into Gemini/whatever, and asking it to help you debug problems. It got me through a good amount of issues.
@@ -114,14 +114,13 @@
 
 Doctor checkup
 ``/opt/clawdbot/extensions/memory-core/node_modules/.bin/clawdbot doctor``
-
 Check status
 ``/opt/clawdbot/extensions/memory-core/node_modules/.bin/clawdbot status``
-
 Restart gateway
 ``/opt/clawdbot/dist/entry.js gateway restart``
 
 # Some errors I ran into
 - If you get a gateway token error try to find the token on the server than update in the gateway settings in the dashboard
+
 ``more /home/clawdbot/.clawdbot/gateway-token.txt`` 
 

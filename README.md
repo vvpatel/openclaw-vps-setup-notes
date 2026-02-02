@@ -1,7 +1,7 @@
 # OpenClaw VPS Setup Notes
 
-Setup notes are published as the main page. After enabling GitHub Pages for this repo (Settings → Pages → deploy from branch `main`, root), view them at:
+Complete setup guide for hosting OpenClaw on a Virtual Private Server.
 
-**https://YOUR_USERNAME.github.io/openclaw-vps-setup-notes/**
+📖 **[View the full guide on GitHub Pages →](https://vvpatel.github.io/openclaw-vps-setup-notes/)**
 
-Replace `YOUR_USERNAME` with your GitHub username.
+This repository contains setup notes and instructions for deploying OpenClaw, a self-hosted personal AI agent, on a VPS. The guide covers everything from server setup to configuring services like Telegram, web browsing, Google integration, and more.
