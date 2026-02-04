@@ -1,7 +1,7 @@
 # OpenClaw VPS Setup Notes
 
-Complete setup guide for hosting OpenClaw on a Virtual Private Server.
+Quick setup notes for hosting OpenClaw on a Virtual Private Server.
 
-📖 **[View the full guide on GitHub Pages →](https://vvpatel.github.io/openclaw-vps-setup-notes/)**
+📖 **[View the full guide →](https://vvpatel.github.io/openclaw-vps-setup-notes/)**
 
-This repository contains setup notes and instructions for deploying OpenClaw, a self-hosted personal AI agent, on a VPS. The guide covers everything from server setup to configuring services like Telegram, web browsing, Google integration, and more.
+This guide setup notes and instructions for deploying OpenClaw, a self-hosted personal AI agent, on a VPS. It walks through server setup and connecting to channels ike Telegram, web browsing, Google integration, and more.

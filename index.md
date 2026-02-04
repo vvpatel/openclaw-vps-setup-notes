@@ -3,7 +3,7 @@
 
 - **What is OpenClaw?** It's an open source, personal AI assistant that can run on your own infrastructure. You can chat with your agent through popular messaging apps and connect it to various services to act on your behalf. This includes accessing the web through a browser, writing code, having access to local files, calendar, email, email, local places, etc. 
 - **Benefits of a hosted server?** Runs 24/7, more secure than running on your laptop, no disconnect from WhatsApp/Telegram when your machine sleeps. For me, the top reason was wanting to try it in a completely separate environment from my personal data given the risks.
-- Disclaimer: These are personal notes, not official docs. I'm more of a "PM" than an "engineer" so this not official documentation. Security is a big risk with all this, so proceed with caution!
+- Disclaimer: I'm more of a "PM" than an "engineer". These are personal notes, not official docs. Security is a big risk with all this, so proceed with caution!
 
 # Set up your server and log in
 
@@ -84,7 +84,7 @@
 
 # Set up Google Connections 
 
-- (I imagine there's an easier way to do this, but this sequence worked. The trouble was that you need to auth Google in a web browser and this server doesn't have a browser with UI so you have to use your desktop)
+- (I imagine there's an easier way to do this, but this sequence worked. The trouble was that you need to auth Google in a web browser and this server doesn't have a browser to use)
 - Login with your new Google Account 
 - Go to [Google Console](https://console.cloud.google.com/welcome/new?pli=1)
 - Create a new project
@@ -125,7 +125,7 @@
 
 # General Debugging Tips
 
-- If you're like me, and don't spend your days on a server command line, you can make progress by opening the log file, dropping the issues into Gemini/ChatGPT/etc, and asking it to help you debug problems. It got me through a good amount of issues. However, it's not as well informed as reading the reference docs so if you get stuck reference those: https://docs.openclaw.ai/
+- If you're like me and don't spend your days on a server command line, you can make progress through issues by by opening the log file, dropping the problems into Gemini/ChatGPT/etc, and asking it to help you debug problems. It got me through a good amount of confusion. However, it's not as well informed as reading the reference docs so if you get stuck reference those instead: https://docs.openclaw.ai/
 - To watch the log from the server:
 ``sudo journalctl -u clawdbot -f``
 - If you keep seeing issues in the log with the bot not having access to do things you are asking it to in the sandbox, take a look at configuring the sandbox permissions using the web dashboard. Have a look under "Config > Agents". To relax some permissions you can let it "rw" read/write to the workspace, and read about how "Elevated Default works".
